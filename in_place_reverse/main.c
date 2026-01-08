@@ -1,11 +1,18 @@
 #include <stdio.h>
 
 void reverseArray(int arr[], int size) {
-  for (int i = 0; i < size / 2; i++) {
-    arr[i] = arr[size - i - 1] - arr[i];
-    arr[size - i - 1] = arr[size - i - 1] - arr[i];
-    arr[i] = arr[i] + arr[size - i - 1];
+  int *left = arr;
+  int *right = left + size - 1;
+  int temp = 0;
+
+  while (left < right) {
+    temp = *left;
+    *left = *right;
+    *right = temp;
+    left++;
+    right--;
   }
+
   return;
 }
 
