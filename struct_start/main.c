@@ -23,5 +23,7 @@ int main() {
   printStudentData(&s1);
   printStudentData(s1.next);
 
+  free(s1.next);
+
   return 0;
 }
